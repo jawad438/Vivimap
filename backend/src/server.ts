@@ -291,8 +291,8 @@ app.post('/api/memories', protect, async (req: AuthRequest, res: Response) => {
         const authorDoc = await User.findById(req.user!.id).select('username').lean();
         
         const memoryForFrontend = {
-            id: createdMemory._id.toString(),
-            title: createdMemory.title,
+ id: (createdMemory._id as mongoose.Types.ObjectId).toString(),
+             title: createdMemory.title,
             description: createdMemory.description,
             position: createdMemory.position,
             files: createdMemory.files,
