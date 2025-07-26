@@ -18,6 +18,7 @@ import { protect, AuthRequest } from './middleware/auth';
 import User from './models/User';
 import VerificationCode from './models/VerificationCode';
 import Memory from './models/Memory';
+import mongoose from 'mongoose';
 
 // --- INITIALIZATION & CONFIG ---
 const app = express();
